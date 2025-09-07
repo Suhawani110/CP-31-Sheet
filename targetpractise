@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define fast_io() ios::sync_with_stdio(false); cin.tie(0);
+#define vi vector<int>
+#define all(v) (v).begin(), (v).end()
+#define pb push_back
+ 
+const int MOD = 1e9 + 7;
+ 
+int mod_add(int a, int b) { return ((a % MOD) + (b % MOD)) % MOD; }
+int mod_mul(int a, int b) { return ((a % MOD) * (b % MOD)) % MOD; }
+ 
+void solve() {
+     char a[10][10];
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    int score = 0;
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (a[i][j] == 'X') {
+                score += min({i, j, 9 - i, 9 - j}) + 1;
+            }
+        }
+    }
+
+    cout << score << "\n";
+}
+ 
+int main() {
+    fast_io();
+    int t;
+    cin >> t;
+    while (t--) solve();
+    return 0;
+}
+/*
+TIME-COMPLEXITY:0(1);
+SPACE-COMPLEXITY:O(1);
+*/
