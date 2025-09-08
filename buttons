@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fast_io() ios::sync_with_stdio(false); cin.tie(0);
+#define vi vector<int>
+#define all(v) (v).begin(), (v).end()
+#define pb push_back
+
+const int MOD = 1e9 + 7;
+
+int mod_add(int a, int b) { return ((a % MOD) + (b % MOD)) % MOD; }
+int mod_mul(int a, int b) { return ((a % MOD) * (b % MOD)) % MOD; }
+
+void solve() {
+    int a,b,c;
+    cin >> a >> b >> c;
+    if((a+c)<(b+c)){
+        cout << "Second" << "\n";
+    }
+    else if((a+c)==(b+c) && c%2==0){
+       cout << "Second" << "\n";
+    }
+    else{
+        cout << "First" << "\n";
+    }
+}
+
+int main() {
+    fast_io();
+    int t;
+    cin >> t;
+    while (t--) solve();
+    return 0;
+}
+/*
+TIME-COMPLEXITY: O(t);
+SPACE - COMPLEXITY : O(1);
+*/
+
